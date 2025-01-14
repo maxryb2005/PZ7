@@ -93,17 +93,17 @@ def logout():
 # Определяем маршрут для парсинга данных
 @app.route('/parse', methods=['POST'])
 def parse():
-    letter = request.form['letter']  # Получаем букву из формы, по которой будем фильтровать боссов
-    url = "https://eldenring.fandom.com/ru/wiki/Категория:Обязательные_боссы"  # URL-адрес страницы с обязательными боссами
+    letter = request.form['letter']  # Получаем букву из формы, по которой будем фильтровать гонщиков
+    url = "https://eldenring.fandom.com/ru/wiki/Категория:Обязательные_гонщиков"  # URL-адрес страницы с обязательными гонщиками
     response = requests.get(url)  # Отправляем HTTP-запрос для получения контента страницы
     soup = BeautifulSoup(response.content, 'html.parser')  # Парсим содержимое страницы с помощью BeautifulSoup
 
     # Находим всех боссов, имена которых начинаются на указанную букву
-    bosses = [boss.text for boss in soup.find_all('a') if boss.text.startswith(letter)]
-    if not bosses:  # Если список боссов пуст
-        bosses = ['боссов на эту букву нет']  # Добавляем сообщение о том, что боссов нет
+    sports = [sport.text for sport in soup.find_all('a') if sport.text.startswith(letter)]
+    if not sports:  # Если список боссов пуст
+        sports = ['гонщиков на эту букву нет']  # Добавляем сообщение о том, что гонщиокв нет
 
-    return render_template('home.html', bosses=bosses)  # Отправляем список боссов на домашнюю страницу для отображения
+    return render_template('home.html', sports=sports)  # Отправляем список гонщиков на домашнюю страницу для отображения
 
 # Запускаем приложение, если это основной модуль
 if __name__ == '__main__':
