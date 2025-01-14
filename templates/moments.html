@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Моменты Formula 1</h2>
+<div class="gallery">
+    <div class="gallery-item">
+        <img src="{{ url_for('static', filename='images/1.jpg') }}" class="img-fluid" alt="Moment 1">
+    </div>
+    <div class="gallery-item">
+        <img src="{{ url_for('static', filename='images/2.jpg') }}" class="img-fluid" alt="Moment 2">
+    </div>
+    <div class="gallery-item">
+        <img src="{{ url_for('static', filename='images/3.jpg') }}" class="img-fluid" alt="Moment 3">
+    </div>
+    <div class="gallery-itemmd-4">
+        <img src="{{ url_for('static', filename='images/4.jpg') }}" class="img-fluid" alt="Moment 4">
+    </div>
+    <div class="gallery-item">
+        <img src="{{ url_for('static', filename='images/5.jpg') }}" class="img-fluid" alt="Moment 5">
+    </div>
+    <div class="gallery-item">
+        <img src="{{ url_for('static', filename='images/6.jpg') }}" class="img-fluid" alt="Moment 6">
+    </div>
+</div>
+{% endblock %}
